@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 热学笔记
+% 作者: Smeraldo
+% 日期: 2025.3.17
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, UTF8, AutoFakeBold]{ctexart} % 文章文档类，12pt 字号
+
+% ========== 基本包 ==========
+\usepackage{amsmath, amssymb, amsthm} % 数学符号、定理环境
+\usepackage{geometry} % 控制页面布局
+\geometry{a4paper, margin=1in} % 设置 A4 纸张，1 英寸边距
+\usepackage{graphicx} % 插入图片
+\usepackage{xcolor} % 颜色支持
+\usepackage{tcolorbox} % 重点内容高亮
+\usepackage{hyperref} % 超链接支持
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=magenta
+}
+
+% ========== 定理、定义、引理 ==========
+% \newtheorem{theorem}{定理}[section]
+% \newtheorem{definition}{定义}[section]
+% \newtheorem{lemma}{引理}[section]
+% \newtheorem{example}{例}[section]
+
+% ========== 常用数学符号定义 ==========
+\newcommand{\R}{\mathbb{R}} % 实数集
+\newcommand{\dx}{\,dx} % 微分符号
+\newcommand{\limn}{\lim_{n\to\infty}} % 极限格式
+
+% ========== 目录 ==========
+\begin{document}
+\tableofcontents % 生成目录
+
+\end{document}

@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 数学分析笔记
+% 作者: Smeraldo
+% 日期: 2025.3.14
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, UTF8, AutoFakeBold]{ctexart} % 文章文档类，12pt 字号
+
+% ========== 基本包 ==========
+\usepackage{amsmath, amssymb, amsthm} % 数学符号、定理环境
+\usepackage{geometry} % 控制页面布局
+\geometry{a4paper, margin=1in} % 设置 A4 纸张，1 英寸边距
+\usepackage{graphicx} % 插入图片
+\usepackage{xcolor} % 颜色支持
+\usepackage{tcolorbox} % 重点内容高亮
+\usepackage{hyperref} % 超链接支持
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=magenta
+}
+
+% ========== 定理、定义、引理 ==========
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{example}{例}[section]
+
+% ========== 常用数学符号定义 ==========
+\newcommand{\R}{\mathbb{R}} % 实数集
+\newcommand{\dx}{\,dx} % 微分符号
+\newcommand{\limn}{\lim_{n\to\infty}} % 极限格式
+
+% ========== 目录 ==========
+\begin{document}
+\tableofcontents % 生成目录
+
+\section{数项级数}
+\subsection{级数的敛散性}
+
+\begin{definition}
+    给定一个数列$\{u_n\}$，对它的各项依次用“$+$”号连接起来的表达式
+    \[
+        u_1 + u_2 + \dots + u_n + \dots
+    \]
+    称为\textbf{\kaishu 常数项无穷级数}或\textbf{\kaishu 数项级数}（也常简称\textbf{\kaishu 级数}），
+    其中$u_n$称为数项级数的\textbf{\kaishu 通项}或\textbf{\kaishu 一般项}.\\
+    数项级数的前n项之和，记为
+    \[
+        S_n = \sum_{k=1}^{n}u_k = u_1 + u_2 + \dots + u_n,
+    \]
+    称它为数项级数的\textbf{\kaishu 第n个部分和}，也简称\textbf{\kaishu 部分和}.
+\end{definition}
+
+\begin{definition}
+    若数项级数的部分和数列$\{S_n\}$收敛于S（即$\lim\limits_{n \to \infty}S_n = S$），则称数项级数\textbf{\kaishu 收敛}，称S为数项级数的\textbf{\kaishu 和}，记作
+    \[
+        S = u_1 + u_2 + \dots + u_n + \dots \;\; \text{或} \;\; S = \sum u_n
+    \]
+    若$\{S_n\}$是发散数列，则称数项级数\textbf{\kaishu 发散}.
+\end{definition}
+
+\begin{example}
+    讨论等比级数（几何级数）
+    \[
+        a + aq + aq^2 + \dots + aq^n + \dots
+    \]
+    的敛散性（$a \neq 0$）\\
+    \textbf{解} $q \neq 1$ 时，级数的第n个部分和
+    \[
+        S_n = a + aq + \dots + aq^{n-1} = a \cdot \frac{1 - q^n}{1 - q} 
+    \]
+    因此，\\
+    \indent （i）当 $\lvert q \rvert < 1$ 时，
+    $\lim\limits_{n \to \infty} = \lim\limits_{n \to \infty} a \cdot \frac{1 - q^n}{1 - q} = \frac{a}{1 - q}$. 
+    此时级数收敛，其和为$\frac{a}{1 - q}$.\\
+    \indent （ii）当 $\left\lvert q \right\rvert < 1$ 时，
+    $\lim\limits_{n \to \infty} = \infty$,级数发散.\\
+    \indent （iii）当 $q = 1$ 时，$S_n = na$,级数发散.\\
+    \indent 当 $q = -1$ 时，$S_{2k} = 0, S_{2k+1} = a, k = 0, 1, 2, \dots,$级数发散.\\
+    \indent 总之，$\lvert q \rvert < 1$时，级数收敛；$\lvert q \rvert \geqslant 1$时，级数发散.
+\end{example}
+
+\begin{tcolorbox}[colback=yellow!20, colframe=red!80!black]
+    \begin{theorem}
+        （级数收敛的柯西准则）\\
+        级数收敛的充要条件是：任给正数$\varepsilon$，总存在正整数N，使得当m>N以及对任意的正整数p，都有
+        \begin{equation}
+            |u_{m+1} + u_{m+2} + \dots + u_{m+p}| < \varepsilon. \tag{1}
+        \end{equation}
+
+        级数发散的充要条件是：存在某正数$\varepsilon_0$，对任何正整数N，总存在正整数$m_0(>N)$和$p_0$，有
+        \begin{equation}
+            |u_{m+1} + u_{m+2} + \dots + u_{m+p}| \geq  \varepsilon_0. \tag{2}
+        \end{equation}
+
+        \textbf{推论} 若级数收敛，则
+        \[
+            \lim\limits_{n \to \infty} u_n = 0.
+        \]
+
+            当一个级数$\sum\limits_{n = 1}^{\infty}u_n$的一般项$u_n$不收敛于零时，由推论可知该级数发散.
+    \end{theorem}
+\end{tcolorbox}
+
+\begin{example}
+    证明\textbf{\kaishu 调和级数}
+    \[
+        1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n} + \dots
+    \]
+    是发散的.\\
+    \textbf{证} 由
+    \[
+        \limn u_n = \limn \frac{1}{n} = 0，
+    \]
+    无法用推论推出调和级数发散.但令p=m时，有
+    \[
+    \begin{aligned}
+        |u_{m+1} + u_{m+2} + \dots + u_{2m}| &= |\frac{1}{m + 1} + \frac{1}{m + 2} + \dots + \frac{1}{2m}|\\
+        &\geq |\frac{1}{2m} + \frac{1}{2m} + \dots + \frac{1}{2m}|\\
+        &= \frac{1}{2},
+    \end{aligned}
+    \]
+    取$\varepsilon_0 = \frac{1}{2}$, 对任何正整数N，只要m>N和p=m就有（2）式成立，所以调和级数是发散的.
+\end{example}
+
+\begin{theorem}
+    若级数$\sum u_n$与$\sum v_n$都收敛,则对任意常数c，d，级数$\sum (cu_n+dv_n)$亦收敛，且
+    \[
+        \sum (cu_n+dv_n) = c\sum u_n+d\sum v_n.
+    \]
+\end{theorem}
+
+\begin{theorem}
+    去掉、增加或改变级数的有限个项并不改变级数的敛散性.
+\end{theorem}
+
+\begin{theorem}
+    在收敛级数的项中任意加括号，既不改变级数的收敛性，也不改变它的和.
+\end{theorem}
+
+\subsection{正项级数}
+
+\end{document}
