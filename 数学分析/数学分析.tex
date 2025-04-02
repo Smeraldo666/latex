@@ -34,10 +34,11 @@
 % ========== 目录 ==========
 \begin{document}
 \tableofcontents % 生成目录
+\clearpage
 
 \section{数项级数}
-\subsection{级数的敛散性}
 
+\subsection{级数的敛散性}
 \begin{definition}
     给定一个数列$\{u_n\}$，对它的各项依次用“$+$”号连接起来的表达式
     \[
@@ -83,7 +84,8 @@
 
 \begin{tcolorbox}[colback=yellow!20, colframe=red!80!black]
     \begin{theorem}
-        （级数收敛的柯西准则）\\
+        （级数收敛的柯西准则）
+
         级数收敛的充要条件是：任给正数$\varepsilon$，总存在正整数N，使得当m>N以及对任意的正整数p，都有
         \begin{equation}
             |u_{m+1} + u_{m+2} + \dots + u_{m+p}| < \varepsilon. \tag{1}
@@ -116,8 +118,8 @@
     无法用推论推出调和级数发散.但令p=m时，有
     \[
     \begin{aligned}
-        |u_{m+1} + u_{m+2} + \dots + u_{2m}| &= |\frac{1}{m + 1} + \frac{1}{m + 2} + \dots + \frac{1}{2m}|\\
-        &\geq |\frac{1}{2m} + \frac{1}{2m} + \dots + \frac{1}{2m}|\\
+        |u_{m+1} + u_{m+2} + \dots + u_{2m}| &= \left|\frac{1}{m + 1} + \frac{1}{m + 2} + \dots + \frac{1}{2m}\right|\\
+        &\geq \left|\frac{1}{2m} + \frac{1}{2m} + \dots + \frac{1}{2m}\right|\\
         &= \frac{1}{2},
     \end{aligned}
     \]
@@ -140,5 +142,117 @@
 \end{theorem}
 
 \subsection{正项级数}
+\subsubsection{正项级数收敛性的一般判别原则}
+\begin{theorem}[比较原则]
+    设$\sum u_n$和$\sum v_n$是两个正项级数，如果存在某正数N，对一切n>N都有
+    \[
+        u_n \leq v_n
+    \]
+    则
 
+    （i）若级数$\sum v_n$收敛，则级数$\sum u_n$也收敛；
+
+    （ii）若级数$\sum u_n$发散，则级数$\sum v_n$也发散.\\
+    \textbf{推论} 设
+    \begin{gather}
+        u_1 + u_2 + \dots + u_n + \dots，\\
+        v_1 + v_2 + \dots + v_n + \dots
+    \end{gather}
+    是两个正项级数，若
+    \[
+        \lim_{n \to \infty}\frac{u_n}{v_n} = l
+    \]
+    则
+
+    （i）当$0<l<+\infty$时，级数（1）（2）同时收敛或同时发散；
+
+    （ii）当$l=0$且级数（2）收敛时，级数（1）也收敛；
+
+    （iii）当$l=+\infty$且级数（2）发散时，级数（1）也发散.
+\end{theorem}
+
+\subsubsection{比式判别法和根式判别法}
+\begin{theorem}[拉朗贝尔判别法，或称比式判别法]
+    设$\sum u_n$为正项级数，且存在某正整数$N_0$及常数q（$0<q<1$）.
+
+    （i）若对一切$n>N_0$，成立不等式
+    \[
+        \frac{u_{n+1}}{u_n} \leq q,
+    \]
+    则级数$\sum u_n$收敛.
+
+    （ii）若对一切$n>N_0$，成立不等式
+    \[
+        \frac{u_{n+1}}{u_n} \geq 1,
+    \]
+    则级数$\sum u_n$发散.\\
+    \textbf{推论$1$}（比式判别法的极限形式）若$\sum u_n$为正项级数，且
+    \begin{gather}
+        \limn\frac{u_{n+1}}{u_n}=q,
+    \end{gather}
+    则
+
+    （i）当$q<1$时，级数$\sum u_n$收敛;
+
+    （ii）当$q>1$或$q=+\infty$时，级数$\sum u_n$发散.
+
+    若$q=1$，这时用比式判别法不能对级数的敛散性作出判断，因为它可能是收敛的，也可能是发散的.\\
+    若某级数的（$3$）式的极限不存在，则可应用上、下极限来判别.\\
+    \textbf{推论$2$}设$\sum u_n$为正项级数.
+
+    （i）若$\varlimsup\limits_{n\to\infty}\frac{u_{n+1}}{u_n}=q<1$，则级数收敛；
+
+    （ii）若$\varliminf\limits_{n\to\infty}\frac{u_{n+1}}{u_n}=q>1$，则级数发散.
+\end{theorem}
+\begin{theorem}[柯西判别法，或称根式判别法]
+    设$\sum u_n$为正项级数，且存在某正整数$N_0$及正常数l，
+
+    （i）若对一切$n>N_0$，成立不等式
+    \[
+        \sqrt[n]{u_n} \leq l<1,
+    \]
+    则级数$\sum u_n$收敛；
+
+    （ii）若对一切$n>N_0$，成立不等式
+    \[
+        \sqrt[n]{u_n} \geq 1,
+    \]
+    则级数$\sum u_n$发散.\\
+    \textbf{推论$1$}（根式判别法的极限形式）若$\sum u_n$为正项级数，且
+    \begin{gather}
+        \limn\sqrt[n]{u_n} = l,
+    \end{gather}
+    则
+
+    （i）当$l<1$时，级数$\sum u_n$收敛;
+
+    （ii）当$l>1$时，级数$\sum u_n$发散.\\
+    若（$4$）式的极限不存在，则可根据根式$\sqrt[n]{u_n}$的上极限来判断.\\
+    \textbf{推论$2$}设$\sum u_n$为正项级数，且
+    \[
+        \varlimsup\limits_{n\to\infty}\sqrt[n]{u_n}=l,
+    \]
+    则当
+
+    （i）$l<1$时级数收敛；
+
+    （ii）$l>1$时级数发散.
+\end{theorem}
+若
+\[
+    \limn\frac{u_{n+1}}{u_n}=q,
+\]
+则必有
+\[
+    \limn\sqrt[n]{u_n} = q.
+\]
+这说明凡能由比式判别法鉴别收敛性的级数，也能由根式判别法来判断.
+
+\subsubsection{积分判别法}
+\begin{theorem}
+    设f为$[1,+\infty)$上的减函数，则级数$\sum\limits_{n=1}^{\infty}f(n)$收敛的充分必要条件是
+    反常积分$\int_{1}^{+\infty}f(x)\, dx$收敛.
+\end{theorem}
+
+\subsection{一般项级数}
 \end{document}

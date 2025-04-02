@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.25)  23 MAR 2025 15:58
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.25)  2 APR 2025 11:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -642,6 +642,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip72
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 22.
+\c@example=\count340
  (./电磁学.aux)
 \openout1 = `电磁学.aux'.
 
@@ -793,27 +794,32 @@ File: images/球坐标系的面元与体积元.png Graphic file (type bmp)
  [2
 
 ] [3] [4]
-Overfull \hbox (17.66985pt too wide) detected at line 353
+Overfull \hbox (17.66985pt too wide) detected at line 351
 []
  []
 
 File: images/标量场的梯度.png Graphic file (type bmp)
 <images/标量场的梯度.png>
-[5] [6] [7] [8] (./电磁学.aux)
+[5] [6] [7]
+Missing character: There is no ， (U+FF0C) in font [lmroman12-regular]:mapping=tex-text;!
+[8] [9]
+File: images/电偶极子的场强.png Graphic file (type bmp)
+<images/电偶极子的场强.png>
+ [10] [11] (./电磁学.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `电磁学.out' has not changed.
-(rerunfilecheck)             Checksum: 5D75DFF63B2C491C49097794E3433742;1829.
+(rerunfilecheck)             Checksum: 998A35177E180D9156CAF0217E10BBD3;2333.
  ) 
 Here is how much of TeX's memory you used:
- 26490 strings out of 474773
- 577014 string characters out of 5757724
+ 26707 strings out of 474773
+ 588152 string characters out of 5757724
  1959839 words of memory out of 5000000
- 48192 multiletter control sequences out of 15000+600000
- 567921 words of font info for 99 fonts, out of 8000000 for 9000
+ 48396 multiletter control sequences out of 15000+600000
+ 568681 words of font info for 109 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,15n,97p,536b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,15n,97p,536b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 电磁学.pdf (8 pages).
+Output written on 电磁学.pdf (11 pages).

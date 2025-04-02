@@ -1,3 +1,7 @@
-\contentsline {section}{\numberline {1}数项级数}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}级数的敛散性}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}正项级数}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {1}数项级数}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}级数的敛散性}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}正项级数}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}正项级数收敛性的一般判别原则}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}比式判别法和根式判别法}{4}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}积分判别法}{6}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}一般项级数}{6}{subsection.1.3}%

@@ -25,7 +25,7 @@
 % \newtheorem{theorem}{定理}[section]
 % \newtheorem{definition}{定义}[section]
 % \newtheorem{lemma}{引理}[section]
-% \newtheorem{example}{例}[section]
+\newtheorem{example}{例}[section]
 
 % ========== 常用数学符号定义 ==========
 \newcommand{\R}{\mathbb{R}} % 实数集
@@ -72,7 +72,6 @@ $u_1 = \rho$、$u_2 = \varphi$、$u_3 = z$与直角坐标变量$x$、$y$、$z$�
     \subfigure[柱坐标系的面元与体积元]{
         \includegraphics[width=0.25\textwidth]{images/柱坐标系的面元与体积元.png}
     }
-    
 \end{figure}
 
 \subsection{球坐标系}
@@ -107,7 +106,6 @@ $\varphi$.球坐标变量比$u_1 = r,u_2 = \theta,u_3 = \varphi$与直角坐标�
     \subfigure[球坐标系的面元与体积元]{
         \includegraphics[width=0.25\textwidth]{images/球坐标系的面元与体积元.png}
     }
-    
 \end{figure}
 
 
@@ -520,4 +518,134 @@ $curl \, \boldsymbol{A}$或$rot \, \boldsymbol{A}$，或$\nabla \times \boldsymb
 \end{gather*}
 
 \section{静电场}
+
+\subsection{库仑定律}
+适用于两个点电荷相互作用
+\[
+    \vec{F}_{12}=k\frac{q_1q_2}{r_{12}^2}\hat{r}_{12}
+\]
+
+SI制：$k=\frac{1}{4\pi\varepsilon_0},\vec{F}_{12}=\frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r_{12}^2}\hat{r}_{12}$
+
+$\varepsilon_0$真空介电常数：$\varepsilon_0=8.854187817\times 10^{-12}\;C^2/(N\cdot m^2)$
+
+库仑（C）的定义：由电流单位安培（A）导出 , 1C=1A$\cdot$s
+
+\subsection{电场强度}
+\subsubsection{电场强度}
+静电场中任一点处的电场强度，等于单位正电荷在该点处所受的电场力。（含大小和方向）
+
+SI制单位：N/C，或 V/m
+
+点电荷q的场强:
+\[
+    \vec{E}=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\hat{r}
+\]
+\subsubsection{场强叠加原理}
+点荷系$q_1,q_2,\dots,q_n$或$q_i(i=1,2,\dots,n)$
+
+$q_0$受力
+\[
+    \vec{F}=\vec{f}_1+\vec{f}_2+\dots+\vec{f}_n=\sum\limits_{i=1}^{n}\vec{f}_i，
+\]
+
+其中$\vec{f}_i=\frac{q_0q_i}{4\pi\varepsilon_0r_i^2}\hat{r_i}$
+
+除以$q_0$：
+\[
+    \frac{\vec{F}}{q_0}=\sum\limits_{i=1}^{n}\frac{\vec{f_i}}{q_0}=
+    \frac{1}{4\pi\varepsilon_0}\sum\limits_{i=1}^{n}\frac{q_i}{r_i^3}\vec{r_i}
+\]
+
+可写成
+\begin{gather*}
+    \vec{E}=\sum\limits_{i=1}^{n}\vec{E_i}\\
+    \text{或}\vec{E}=\frac{1}{4\pi\varepsilon_0}\int_{q}\frac{dq}{r^3}\vec{r}
+\end{gather*}
+\subsubsection{场强的计算}
+依据：1）场强的定义；2）库仑定律；3）场强叠加原理。
+
+点电荷的场：
+\[
+    \vec{E}=\frac{q\vec{r}}{4\pi\varepsilon_0 r^3}
+\]
+
+电荷系的场：
+\[
+    \vec{E}=\frac{1}{4\pi\varepsilon_0}\sum\limits_{i=1}^{n}\frac{q_i}{r_i^3}\vec{r_i}
+\]
+
+连续带电体的场：
+\[
+    \vec{E}=\frac{1}{4\pi\varepsilon_0}\int_{q}\frac{dq}{r^3}\vec{r}
+\]
+\begin{example}[电偶极子]
+    两点电荷$+q$和$-q$，相距l，$\vec{l}$的方向由$-q$指向$+q$，当考察点至两电荷的距离$r\gg l$时，
+    两点电荷可视为一电荷对，称为电偶极子。
+
+    定义电偶极矩：$\vec{p}=q\vec{l}$（简称电矩），$\vec{l}$是极轴（从负电荷指向正电荷的矢径）；电矩的值$p_e=ql$\\
+    求电偶极子的场强（$r\gg l$）
+
+    $1$）场点P在$\vec{l}$的延长线上
+    \begin{gather*}
+        E_+=\frac{q}{4\pi\varepsilon_0(r-\frac{l}{2})^2},\;
+        E_-=\frac{q}{4\pi\varepsilon_0(r+\frac{l}{2})^2}\\
+        \hspace{-300pt}\text{则总场强}\\
+        E_1=\frac{q}{4\pi\varepsilon_0}\left[\frac{1}{(r-\frac{l}{2})^2}-
+        \frac{1}{(r+\frac{l}{2})^2}\right]
+        =\frac{q}{4\pi\varepsilon_0}\frac{2rl}{\left[r^2-\left(\frac{l}{2}\right)^2\right]^2}\\
+        \hspace{-200pt}\text{因}r\gg l\text{则}r^2-\left(\frac{l}{2}\right)^2\approx r^2\\
+        \hspace{-326pt}\text{故}\\
+        E_1=\frac{1}{4\pi\varepsilon_0}\frac{2ql}{r^3}
+        \;\text{或}\;
+        E_1=\frac{1}{4\pi\varepsilon_0}\frac{2\vec{p}}{r^3}
+    \end{gather*}
+
+    $2$）场点P在$\vec{l}$的中垂线上
+    \begin{gather*}
+        E_+=E_-=\frac{q}{4\pi\varepsilon_0}\frac{1}{r^2+\left(\frac{l}{2}\right)^2}\\
+        \hspace{-300pt}\text{则总场强}\\
+        E_2=2E_+\cos\alpha\\
+        \hspace{-300pt}\text{而}\\
+        \cos\alpha=\frac{\frac{l}{2}}{\sqrt{r^2+\left(\frac{l}{2}\right)^2}}\\
+        \hspace{-300pt}\text{得}\\
+        E_2=\frac{q}{4\pi\varepsilon_0}\frac{l}{\left[r^2+\left(\frac{l}{2}\right)^2\right]^\frac{3}{2}}\\
+        \hspace{-200pt}\text{因}r\gg l\text{则}r^2+\left(\frac{l}{2}\right)^2\approx r^2\\
+        \hspace{-326pt}\text{故}\\
+        E_2=\frac{ql}{4\pi\varepsilon_0r^3}
+        \;\text{或}\;
+        E_2=\frac{1}{4\pi\varepsilon_0}\frac{-\vec{p}}{r^3}
+    \end{gather*}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.25\textwidth]{images/电偶极子的场强.png}
+        \caption{电偶极子的场强}
+    \end{figure}
+
+    $3$）场点P在远处任一位置
+    \begin{gather*}
+        E_+=\frac{q}{4\pi\varepsilon_0r_+^2},\;E_-=\frac{q}{4\pi\varepsilon_0r_-^2}\\
+        \hspace{-140pt}\text{将$\vec{E_+},\vec{E_-}$分别沿着$\vec{r}$和垂直于$\vec{r}$方向分解}\\
+        \begin{aligned}
+            E_r&=E_+\cos(\theta_1-\theta)-E_-\cos(\theta-\theta_2)\\
+            &\approx E_+-E_-=\frac{q}{4\pi\varepsilon_0}(\frac{1}{r_+^2}-\frac{1}{r_-^2})\\
+            &=\frac{q}{4\pi\varepsilon_0}\frac{(r_-+r_+)(r_--r_+)}{r_+^2\cdot r_-^2}\\
+            &\approx\frac{q}{4\pi\varepsilon_0}\frac{2rl\cos\theta}{r^4}\\
+            &=\frac{2\cos\theta}{4\pi\varepsilon_0 r^3}p_e
+        \end{aligned}\\
+        \begin{aligned}
+            E_\theta&=E_+\sin(\theta_1-\theta)-E_-\sin(\theta-\theta_2)\\
+            &=\frac{q}{4\pi\varepsilon_0r_+^2r_-^2}\left[r_-^2\sin(\theta_1-\theta)+r_+^2\sin(\theta-\theta_2)\right]\\
+            &=\frac{ql\sin\theta}{2\times 4\pi\varepsilon_0r_+^2r_-^2}\left(r_++r_-\right)\\
+            &=\frac{\sin\theta}{4\pi\varepsilon_0 r^3}p_e
+        \end{aligned}\\
+        \hspace{-300pt}\text{场强的大小：}\\
+        E_3=\sqrt{E_r^2+E_\theta^2}=\frac{p_e}{4\pi\varepsilon_0 r^3}\sqrt{3\cos^2\theta+1}\\
+        \hspace{-300pt}\text{场强的方向：}\\
+        \tan\alpha=\frac{E_\theta}{E_r}=\frac{1}{2}\tan\theta,\\
+        \hspace{-238pt}\text{其中$\alpha$为$\vec{E_3}$与$\vec{r}$的夹角}\\
+    \end{gather*}
+\end{example}
+
 \end{document}

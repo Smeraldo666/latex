@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.25)  17 MAR 2025 19:12
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.25)  26 MAR 2025 11:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -755,7 +755,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `数学分析.toc'.
 
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 37.
+ [1
 
+]
 
 Package fontspec Warning: Font "STKaiti" does not contain requested Script
 (fontspec)                "CJK".
@@ -788,19 +792,20 @@ Package fontspec Info: Font family 'STKaiti(0)' created for font 'STKaiti'
 
 
 LaTeX Font Warning: Font shape `TU/STKaiti(0)/b/it' undefined
-(Font)              using `TU/STKaiti(0)/b/n' instead on input line 46.
+(Font)              using `TU/STKaiti(0)/b/n' instead on input line 47.
 
 
 LaTeX Font Warning: Font shape `TU/STSong(0)/b/it' undefined
-(Font)              using `TU/STSong(0)/b/n' instead on input line 69.
+(Font)              using `TU/STSong(0)/b/n' instead on input line 70.
 
-LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 105.
-[1
+[2
 
 ]
 Missing character: There is no ， (U+FF0C) in font [lmroman12-regular]:mapping=tex-text;!
-[2] (./数学分析.aux)
+[3]
+Missing character: There is no ， (U+FF0C) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ， (U+FF0C) in font [lmroman12-regular]:mapping=tex-text;!
+[4] [5] [6] (./数学分析.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -810,15 +815,15 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `数学分析.out' has not changed.
-(rerunfilecheck)             Checksum: 953B7B401B48E62DFCD306201DBD5A41;269.
+(rerunfilecheck)             Checksum: 707346ECCE37D84C1AFFF7D726BE4BCF;807.
  ) 
 Here is how much of TeX's memory you used:
- 26332 strings out of 474773
- 577635 string characters out of 5757724
- 1943839 words of memory out of 5000000
- 48053 multiletter control sequences out of 15000+600000
+ 26358 strings out of 474773
+ 579047 string characters out of 5757724
+ 1936839 words of memory out of 5000000
+ 48079 multiletter control sequences out of 15000+600000
  564980 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,7n,97p,537b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,97p,537b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 数学分析.pdf (2 pages).
+Output written on 数学分析.pdf (6 pages).
